@@ -1,0 +1,24 @@
+{
+	"async":false,
+	"description": "RandomSelect",
+	"inputParameters": [{
+		"type": "file",
+		"description": "imageData",
+		"name": "imageData"
+	},{
+		"type": "int",
+		"description": "selectSize",
+		"name": "selectSize"
+	},{
+		"type": "int",
+		"description": "seed",
+		"name": "seed"
+	}],
+	"outputParameters": [{
+		"name": "selectResult",
+		"type": "list",
+		"description": "selectResult"
+	}],
+	"implementation": "Python",
+	"lib": []
+}

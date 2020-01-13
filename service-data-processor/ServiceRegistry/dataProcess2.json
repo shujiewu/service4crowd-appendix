@@ -1,0 +1,78 @@
+{
+	"name": "service-data-processor",
+	"serviceType": "MachineService",
+	"atomicServices": [{
+		"name": "processor",
+		"version": 1,
+		"description": "Test2",
+		"url": "/processor/{processorName}",
+		"async": false,
+		"method": "GET",
+		"queryParameters": [{
+			"name": "name",
+			"type": "string",
+			"default": "",
+			"description": "Only one deployment can be applied to one application at the same time"
+		}, {
+			"name": "type",
+			"type": "string",
+			"default": "",
+			"description": "Only one deployment can be applied to one application at the same time"
+		}],
+		"uriParameters": [{
+			"name": "algorithmName",
+			"type": "string",
+			"default": "false",
+			"description": "Only one deployment can be applied to one application at the same time"
+		}, {
+			"name": "val",
+			"type": "string",
+			"default": "false",
+			"description": "Only one deployment can be applied to one application at the same time"
+		}],
+		"body": [{
+			"name": "args",
+			"type": "string",
+			"description": "Only one deployment can be applied to one application at the same time"
+		}, {
+			"name": "container",
+			"type": "object",
+			"default": {
+				"forcePullImage": false,
+				"image": "mesosphere:marathon/latest",
+				"network": "BRIDGE",
+				"parameters": [{
+					"key": "name",
+					"value": "kdc"
+				}],
+				"portMappings": [{
+					"containerPort": 80,
+					"hostPort": 0,
+					"protocol": "tcp",
+					"servicePort": 10019,
+					"name": "http",
+					"labels": {
+						"vip": "192.168.0.1:80"
+					}
+				}],
+				"privileged": false
+			},
+			"description": "Only one deployment can be applied to one application at the same time"
+		}],
+		"response": [{
+			"status": 200,
+			"description": "",
+			"parameters": [{
+					"name": "result",
+					"type": "string",
+					"description": "Only one deployment can be applied to one application at the same time"
+				},
+				{
+					"name": "name",
+					"type": "string",
+					"description": "Only one deployment can be applied to one application at the same time"
+				}
+			]
+		}]
+	}]
+}

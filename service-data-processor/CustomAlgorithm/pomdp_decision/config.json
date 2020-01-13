@@ -1,0 +1,41 @@
+{
+	"async":false,
+	"description": "PomdpDecision",
+	"inputParameters": [{
+		"type": "list",
+		"description": "estimateResult",
+		"name": "estimateResult"
+	},{
+		"name": "workerAbility",
+		"type": "object",
+		"description": "workerAbility"
+	},{
+		"name": "transParameter",
+		"type": "object",
+		"description": "transParameter"
+	},{
+		"name": "cost",
+		"type": "double",
+		"description": "cost",
+		"default": 0.25
+	}],
+	"outputParameters": [{
+		"name": "noIterList",
+		"type": "list",
+		"description": "noIterResult"
+	},{
+		"name": "moreIterList",
+		"type": "list",
+		"description": "moreIterResult"
+	},{
+		"name": "noIterNum",
+		"type": "int",
+		"description": "noIterNum"
+	},{
+		"name": "moreIterNum",
+		"type": "int",
+		"description": "moreIterNum"
+	}],
+	"implementation": "Python",
+	"lib": []
+}

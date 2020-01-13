@@ -1,0 +1,10 @@
+name: RandomSelect
+entry_points:
+  main:
+    parameters:
+      trainingData: {type: file, default: ""}
+      dataSetName: {type:string, default: ""}
+      selectSize: {type: int, default: 5}
+      seed: {type: int, default: 10}
+      storage_dir: {type: output, default: ""}
+    command: "python random_select.py {selectSize} {seed} {trainingData} {dataSetName} {storage_dir}"

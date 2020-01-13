@@ -1,0 +1,43 @@
+{
+	"description": "CATD",
+	"inputParameters": [{
+		"type": "file",
+		"description": "answerData",
+		"name": "answerData"
+	},{
+		"type": "double",
+		"description": "parameter1",
+		"name": "parameter1"
+	},{
+		"type": "string",
+		"description": "parameter2",
+		"name": "parameter2"
+	},{
+		"name": "file1",
+		"type": "file",
+		"description": "resultPredict"
+	},{
+		"name": "file2",
+		"type": "file",
+		"description": "RMSE"
+	},{
+		"name": "dir1",
+		"type": "path",
+		"description": "MAE"
+	}],
+	"outputParameters": [{
+		"name": "parameter1",
+		"type": "double",
+		"description": "accuracy"
+	},{
+		"name": "parameter2",
+		"type": "string",
+		"description": "if datatype is decisionmaking"
+	},{
+		"name": "file1",
+		"type": "file",
+		"description": "resultPredict"
+	}],
+	"implementation": "Python",
+	"lib": []
+}

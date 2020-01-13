@@ -1,0 +1,32 @@
+{
+	"async":false,
+	"description": "GetOriginalData",
+	"inputParameters": [{
+		"type": "file",
+		"description": "originalData",
+		"name": "originalData"
+	},{
+		"type": "list",
+		"description": "excludeIdList",
+		"name": "excludeIdList"
+	},{
+		"type": "string",
+		"description": "dataSetName",
+		"name": "dataSetName"
+	},{
+		"type": "int",
+		"description": "selectSize",
+		"name": "selectSize"
+	},{
+		"type": "int",
+		"description": "seed",
+		"name": "seed"
+	}],
+	"outputParameters": [{
+		"name": "imageIdList",
+		"type": "list",
+		"description": "imageIdList"
+	}],
+	"implementation": "Python",
+	"lib": []
+}

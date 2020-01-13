@@ -1,0 +1,32 @@
+{
+	"async":false,
+	"description": "RandomSelect",
+	"inputParameters": [{
+		"type": "file",
+		"description": "trainingData",
+		"name": "trainingData"
+	},{
+		"type": "string",
+		"description": "dataSetName",
+		"name": "dataSetName"
+	},{
+		"type": "int",
+		"description": "selectSize",
+		"name": "selectSize"
+	},{
+		"type": "int",
+		"description": "seed",
+		"name": "seed"
+	}],
+	"outputParameters": [{
+		"name": "imageIdList",
+		"type": "list",
+		"description": "imageIdList"
+	},{
+		"name": "trainingItemList",
+		"type": "list",
+		"description": "trainingItemList"
+	}],
+	"implementation": "Python",
+	"lib": []
+}

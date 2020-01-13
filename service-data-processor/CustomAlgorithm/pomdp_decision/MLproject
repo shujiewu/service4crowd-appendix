@@ -1,0 +1,10 @@
+name: PomdpDecision
+entry_points:
+  main:
+    parameters:
+      estimateResult: {type: list, default: ""}
+      workerAbility: {type: object, default: ""}
+      transParameter: {type: object, default: ""}
+      cost: {type: float, default: 0.25}
+      storage_dir: {type: output, default: ""}
+    command: "python pomdp_decision.py {estimateResult} {workerAbility} {transParameter} {cost} {storage_dir}"

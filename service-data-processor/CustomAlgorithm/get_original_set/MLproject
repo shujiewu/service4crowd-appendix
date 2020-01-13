@@ -1,0 +1,11 @@
+name: GetOriginalData
+entry_points:
+  main:
+    parameters:
+      originalData: {type: file, default: ""}
+      dataSetName: {type:string, default: ""}
+      selectSize: {type: int, default: 5}
+      seed: {type: int, default: 10}
+      excludeIdList: {type: list, default: ""}
+      storage_dir: {type: output, default: ""}
+    command: "python get_original_data.py {selectSize} {seed} {originalData} {excludeIdList} {dataSetName} {storage_dir}"

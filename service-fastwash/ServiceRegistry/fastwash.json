@@ -1,0 +1,237 @@
+{
+	"name": "service-fastwash",
+	"serviceType": "HumanService",
+	"atomicServices": [{
+		"name": "decomposeTask",
+		"version": 1,
+		"description": "decomposeTask",
+		"url": "/annotation/task/decompose",
+		"async": false,
+		"method": "POST",
+		"queryParameters": [],
+		"uriParameters": [],
+		"body": [{
+			"name": "dataSetName",
+			"type": "string",
+			"description": "dataSetName",
+			"default": "voc2007"
+		}, {
+			"name": "imageIdList",
+			"type": "list",
+			"description": "imageIdList"
+		}, {
+			"name": "simulate",
+			"type": "boolean",
+			"description": "simulate",
+			"default": false
+		}],
+		"response": [{
+			"status": 200,
+			"description": "",
+			"parameters": [{
+				"name": "imageToClass",
+				"type": "list",
+				"description": "imageToClass"
+			}]
+		}]
+	},{
+		"name": "createProject",
+		"version": 1,
+		"description": "createProject",
+		"url": "/project/createAndPublish",
+		"async": false,
+		"method": "POST",
+		"queryParameters": [],
+		"uriParameters": [],
+		"body": [{
+			"name": "dataSetName",
+			"type": "string",
+			"description": "dataSetName",
+			"default": "voc2007"
+		}, {
+			"name": "imageIdList",
+			"type": "list",
+			"description": "imageIdList"
+		},{
+			"name": "imageToClass",
+			"type": "list",
+			"description": "imageToClass"
+		},{
+			"name": "imageToAnnotation",
+			"type": "list",
+			"description": "imageToAnnotation"
+		},{
+			"name": "maxWorkerPerTask",
+			"type": "int",
+			"description": "maxWorkerPerTask"
+		}],
+		"response": [{
+			"status": 200,
+			"description": "",
+			"parameters": [{
+				"name": "projectInfo",
+				"type": "object",
+				"description": "projectInfo"
+			},{
+				"name": "projectName",
+				"type": "string",
+				"description": "projectName"
+			}]
+		}]
+	},{
+		"name": "getRecentResult",
+		"version": 1,
+		"description": "getRecentResult",
+		"url": "/project/recentResult/{projectName}",
+		"async": false,
+		"method": "POST",
+		"queryParameters": [],
+		"uriParameters": [{
+			"name": "projectName",
+			"type": "string",
+			"description": "projectName"
+		}],
+		"body": [{
+			"name": "delaySeconds",
+			"type": "int",
+			"description": "delaySeconds",
+			"default": 5
+		}],
+		"response": [{
+			"status": 200,
+			"description": "",
+			"parameters": [{
+				"name": "recentResult",
+				"type": "list",
+				"description": "recentResult"
+			}]
+		}]
+	},{
+		"name": "republishProject",
+		"version": 1,
+		"description": "republishProject",
+		"url": "/project/republish/{projectName}",
+		"async": false,
+		"method": "POST",
+		"queryParameters": [],
+		"uriParameters": [{
+			"name": "projectName",
+			"type": "string",
+			"description": "projectName"
+		}],
+		"body": [{
+			"name": "crowdTaskIdList",
+			"type": "list",
+			"description": "crowdTaskIdList"
+		}],
+		"response": [{
+			"status": 200,
+			"description": "",
+			"parameters": []
+		}]
+	},{
+		"name": "addToTrainingSet",
+		"version": 1,
+		"description": "addToTrainingSet",
+		"url": "/project/trainingSet/add/{projectName}",
+		"async": false,
+		"method": "POST",
+		"queryParameters": [],
+		"uriParameters": [{
+			"name": "projectName",
+			"type": "string",
+			"description": "projectName"
+		}],
+		"body": [{
+			"name": "crowdTaskIdList",
+			"type": "list",
+			"description": "crowdTaskIdList"
+		}],
+		"response": [{
+			"status": 200,
+			"description": "",
+			"parameters": []
+		}]
+	},{
+		"name": "getTrainingSet",
+		"version": 1,
+		"description": "getTrainingSet",
+		"url": "/project/trainingSet/get/{projectName}",
+		"async": false,
+		"method": "GET",
+		"queryParameters": [],
+		"uriParameters": [{
+			"name": "projectName",
+			"type": "string",
+			"description": "projectName"
+		}],
+		"body": [],
+		"response": [{
+			"status": 200,
+			"description": "",
+			"parameters": [{
+				"name": "imageIdList",
+				"type": "list",
+				"description": "imageIdList"
+			},{
+				"name": "trainingItemList",
+				"type": "list",
+				"description": "trainingItemList"
+			}]
+		}]
+	},{
+		"name": "getRemainingTask",
+		"version": 1,
+		"description": "getRemainingTask",
+		"url": "/project/tasks/remain/{projectName}",
+		"async": false,
+		"method": "GET",
+		"queryParameters": [],
+		"uriParameters": [{
+			"name": "projectName",
+			"type": "string",
+			"description": "projectName"
+		}],
+		"body": [],
+		"response": [{
+			"status": 200,
+			"description": "",
+			"parameters": [{
+				"name": "remainTaskNum",
+				"type": "int",
+				"description": "remainTaskNum"
+			}]
+		}]
+	},{
+		"name": "estimateResult",
+		"version": 1,
+		"description": "estimateResult",
+		"url": "/result/estimate",
+		"async": false,
+		"method": "POST",
+		"queryParameters": [],
+		"uriParameters": [],
+		"body": [{
+			"name": "taskItemList",
+			"type": "list",
+			"description": "taskItemList"
+		}],
+		"response": [{
+			"status": 200,
+			"description": "",
+			"parameters": [{
+				"name": "estimateResult",
+				"type": "list",
+				"description": "estimateResult"
+			},{
+				"name": "workerAbility",
+				"type": "object",
+				"description": "workerAbility"
+			},{
+				"name": "transParameter",
+				"type": "object",
+				"description": "transParameter"
+			}]
+		}]
+	}]
+}

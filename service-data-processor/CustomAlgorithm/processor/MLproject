@@ -1,0 +1,10 @@
+name: tutorial
+entry_points:
+  main:
+    parameters:
+      alpha: {type: float, default: 0.5}
+      iterr: {type: int, default: 1}
+      answerData: {type: file, default: 0.1}
+      answerData2: {type: path, default: 0.1}
+      storage_dir: {type: output, default: ""}
+    command: "python train.py {alpha} {iterr} {answerData} {answerData2} {storage_dir}"

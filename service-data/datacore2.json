@@ -1,0 +1,180 @@
+{
+	"name": "service-data-core",
+	"serviceType": "MachineService",
+	"atomicServices": [{
+		"name": "loadDataSet",
+		"version": 1,
+		"description": "loadDataSet",
+		"url": "/data/customData/{dataSetName}",
+		"async": false,
+		"method": "GET",
+		"queryParameters": [],
+		"uriParameters": [{
+			"name": "dataSetName",
+			"type": "string",
+			"default": "",
+			"description": "dataSetName"
+		}],
+		"response": [{
+			"status": 200,
+			"description": "",
+			"parameters": [{
+					"name": "CustomFiles",
+					"type": "path",
+					"description": "CustomFiles"
+				}
+			]
+		}]
+	}, {
+		"name": "loadDataFile",
+		"version": 1,
+		"description": "loadDataFile",
+		"url": "/data/customData/{dataSetName}/{fileName}",
+		"async": false,
+		"method": "GET",
+		"queryParameters": [],
+		"uriParameters": [{
+			"name": "dataSetName",
+			"type": "string",
+			"default": "",
+			"description": "dataSetName"
+		},{
+			"name": "fileName",
+			"type": "string",
+			"default": "",
+			"description": "fileName"
+		}],
+		"response": [{
+			"status": 200,
+			"description": "",
+			"parameters": [{
+					"name": "CustomFile",
+					"type": "file",
+					"description": "CustomFile"
+				}
+			]
+		}]
+	}, {
+		"name": "loadMetaData",
+		"version": 1,
+		"description": "loadMetaData",
+		"url": "/data/metaData/{dataName}/load",
+		"async": false,
+		"method": "GET",
+		"queryParameters": [],
+		"uriParameters": [{
+			"name": "dataName",
+			"type": "string",
+			"default": "",
+			"description": "dataName"
+		}],
+		"response": [{
+			"status": 200,
+			"description": "",
+			"parameters": [{
+					"name": "MetaData",
+					"type": "object",
+					"description": "meta data"
+				},
+				{
+					"name": "MetaDataId",
+					"type": "string",
+					"description": "meta data id"
+				},
+				{
+					"name": "UnitDataList",
+					"type": "object[]",
+					"description": "unit data list"
+				},
+				{
+					"name": "UnitDataListId",
+					"type": "string[]",
+					"description": "unit data list id"
+				}
+			]
+		}]
+	}, {
+		"name": "loadAnswerData",
+		"version": 1,
+		"description": "loadAnswerData",
+		"url": "/data/answerData/{dataName}/load",
+		"async": false,
+		"method": "GET",
+		"queryParameters": [],
+		"uriParameters": [{
+			"name": "dataName",
+			"type": "string",
+			"default": "",
+			"description": "dataName"
+		}],
+		"response": [{
+			"status": 200,
+			"description": "",
+			"parameters": [{
+					"name": "answerData",
+					"type": "object[]",
+					"description": "answer data"
+				},
+				{
+					"name": "answerDataId",
+					"type": "string",
+					"description": "answer data id"
+				}, {
+					"name": "truthData",
+					"type": "object",
+					"description": "truth data"
+				}, {
+					"name": "dataType",
+					"type": "string",
+					"description": "string"
+				}
+			]
+		}]
+	}, {
+		"name": "loadTaskUI",
+		"version": 1,
+		"description": "loadTaskUI",
+		"url": "/data/taskUI/{id}/load",
+		"async": false,
+		"method": "GET",
+		"queryParameters": [],
+		"uriParameters": [{
+			"name": "id",
+			"type": "string",
+			"default": "",
+			"description": "UI Id"
+		}],
+		"response": [{
+			"status": 200,
+			"description": "",
+			"parameters": [{
+				"name": "instruction",
+				"type": "string",
+				"description": "task instruction"
+			}]
+		}]
+	}, {
+		"name": "answerDataStat",
+		"version": 1,
+		"description": "answerDataStat",
+		"url": "/data/answerData/{answerDataId}/dataStat",
+		"async": false,
+		"method": "GET",
+		"queryParameters": [],
+		"uriParameters": [{
+			"name": "answerDataId",
+			"type": "string",
+			"default": "",
+			"description": "answerDataId"
+		}],
+		"response": [{
+			"status": 200,
+			"description": "",
+			"parameters": [{
+				"name": "answerStatistics",
+				"type": "object",
+				"description": "answerStatistics"
+			}]
+		}]
+	}]
+}

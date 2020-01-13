@@ -1,0 +1,15 @@
+name: tutorial
+
+conda_env: conda.yaml
+
+entry_points:
+  main:
+    parameters:
+      answerData: {type: file, default: 0.1}
+      parameter1: {type: double, default: 0.1}
+      parameter2: {type: string, default: "para2"}
+      file1: {type: file, default: 0.1}
+      file2: {type: file, default: 0.1}
+      dir1: {type: path, default: 0.1}
+      storage_dir: {type: output, default: ""}
+    command: "python train.py {parameter1} {parameter2} {answerData} {file1} {file2} {dir1} {storage_dir}"
